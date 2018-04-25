@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_process_flow">
+    <sys_process_flow action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_172325_daily_exp_monthly_expences">state=3^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Manager Approved</label>
+        <name>State-Manager Approved</name>
+        <order>300</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-24 22:06:43</sys_created_on>
+        <sys_id>9754fe6fdba153008252f6dfbf96198d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>State-Manager Approved</sys_name>
+        <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
+        <sys_update_name>sys_process_flow_9754fe6fdba153008252f6dfbf96198d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-24 22:06:43</sys_updated_on>
+        <table>x_172325_daily_exp_monthly_expences</table>
+    </sys_process_flow>
+</record_update>

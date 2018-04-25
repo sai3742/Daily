@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Year" max_length="40" name="x_172325_daily_exp_year" type="collection">
+        <element display="true" label="Year" max_length="40" name="year" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="date" label="Date" language="en" table="x_172325_daily_exp_daily_expences">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>date</element>
+            <help/>
+            <hint/>
+            <label>Date</label>
+            <language>en</language>
+            <name>x_172325_daily_exp_daily_expences</name>
+            <plural>Dates</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-24 06:23:07</sys_created_on>
+            <sys_id>dc9c5b97dbe913008252f6dfbf9619ce</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Date</sys_name>
+            <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
+            <sys_update_name>sys_documentation_x_172325_daily_exp_daily_expences_date_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-24 06:23:07</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Monthly Expences" max_length="40" name="x_172325_daily_exp_monthly_expences" type="collection">
+        <element label="Advance Amount" max_length="20" name="advance_amount" type="currency"/>
+        <element label="Balanced Amount" max_length="20" name="balanced_amount" type="currency"/>
+        <element attributes="edge_encryption_enabled=true" label="Comments" max_length="4000" name="comments" type="journal"/>
+        <element label="Month" mandatory="true" max_length="32" name="month" reference="x_172325_daily_exp_month" type="reference"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Name" max_length="32" name="name" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="1" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element label="CEO Rejected" value="10"/>
+                <element label="Claim About to Release" value="8"/>
+                <element label="Closed" value="11"/>
+                <element label="Draft" value="1"/>
+                <element label="Finance Team Approved" value="5"/>
+                <element label="Finance Team Rejected" value="6"/>
+                <element label="Fund Released" value="7"/>
+                <element label="Manager Approved" value="3"/>
+                <element label="Manager Rejected" value="4"/>
+                <element label="More Information Required" value="9"/>
+                <element label="Requested" value="2"/>
+            </choice>
+        </element>
+        <element label="Total Amount" max_length="20" name="total_amount" type="currency"/>
+        <element label="Year" mandatory="true" max_length="32" name="year" reference="x_172325_daily_exp_year" type="reference"/>
+        <index name="index">
+            <element name="month"/>
+        </index>
+        <index name="index2">
+            <element name="year"/>
+        </index>
+        <index name="index3">
+            <element name="name"/>
+        </index>
+    </element>
+</database>

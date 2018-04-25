@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_172325_daily_exp_daily_expences</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Copy Amount to total</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	// Add your code here
+	var amnt = 0;
+	var gr = new GlideRecord('x_172325_daily_exp_daily_expences');
+//	gr.addQuery('month',current.month);
+	gr.addQuery('sys_id',current.sys_id);
+	gr.query();
+	while(gr.next()){
+		amnt =parseFloat(amnt)+parseFloat(gr.amount);
+	}
+	var brec = new GlideRecord('x_172325_daily_exp_monthly_expences');
+	brec.addQuery('sys_id',current.monthly_number);
+	brec.query();
+	if(brec.next()){
+		brec.total_amount= amnt;
+		brec.balanced_amount = brec.total_amount - brec.advance_amount;
+		brec.update();
+	}
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-24 11:24:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>48a024efdb6d13008252f6dfbf9619b7</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Copy Amount to total</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
+        <sys_update_name>sys_script_48a024efdb6d13008252f6dfbf9619b7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-25 05:13:44</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=48a024efdb6d13008252f6dfbf9619b7"/>
+</record_update>

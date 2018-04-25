@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>comments</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-24 08:08:28</sys_created_on>
+        <sys_id>7094bf17db2d13008252f6dfbf9619d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>comments</sys_name>
+        <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
+        <sys_update_name>sys_ui_policy_action_7094bf17db2d13008252f6dfbf9619d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-24 08:08:28</sys_updated_on>
+        <table>x_172325_daily_exp_daily_expences</table>
+        <ui_policy display_value="Make coments mandatory when expences type is other">7f647f17db2d13008252f6dfbf961927</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+</record_update>
