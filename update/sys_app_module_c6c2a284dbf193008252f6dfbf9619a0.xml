@@ -6,37 +6,39 @@
         <assessment/>
         <content_page/>
         <device_type/>
-        <filter/>
+        <filter table="x_172325_daily_exp_monthly_expences">state=2^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="2"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
         <hint/>
         <homepage/>
         <image/>
         <link_type>LIST</link_type>
         <map_page/>
-        <mobile_title>Years</mobile_title>
+        <mobile_title>Requested For Approval</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_172325_daily_exp_year</name>
-        <order>500</order>
+        <name>x_172325_daily_exp_monthly_expences</name>
+        <order>50</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
-        <roles>x_172325_daily_exp.Manager,x_172325_daily_exp.Finance</roles>
+        <roles/>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-04-24 06:15:18</sys_created_on>
+        <sys_created_on>2018-04-26 10:07:03</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>f9ca9b17dbe913008252f6dfbf961958</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Years</sys_name>
+        <sys_id>c6c2a284dbf193008252f6dfbf9619a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Requested For Approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
         <sys_policy/>
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
-        <sys_update_name>sys_app_module_f9ca9b17dbe913008252f6dfbf961958</sys_update_name>
+        <sys_update_name>sys_app_module_c6c2a284dbf193008252f6dfbf9619a0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-26 10:03:55</sys_updated_on>
+        <sys_updated_on>2018-04-26 10:07:03</sys_updated_on>
         <timeline_page/>
-        <title>Years</title>
+        <title>Requested For Approval</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>
