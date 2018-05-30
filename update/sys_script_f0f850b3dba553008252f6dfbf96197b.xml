@@ -12,15 +12,15 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_172325_daily_exp_daily_expences</collection>
+        <collection>sys_attachment</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Ask Attachement</name>
-        <order>50</order>
+        <name>Ask attachement</name>
+        <order>100</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -31,26 +31,28 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	
 	// Add your code here
-	
-	if(parseFloat(current.amount)>50){
-		var gr = new GlideRecord("sys_attachment");
-		gr.addQuery("table_name",current.getTableName());
-		gr.addQuery("table_sys_id",current.sys_id);
-		gr.query();
-	
-		if(!gr.next()){
-			gs.addErrorMessage("Please attach a document proof");
-			//current.is_file_attached = false;
-			current.setAbortAction(true);	
+	var dateArray =[];
+	var m = current.table_sys_id;
+		var gr = new GlideRecord("x_172325_daily_exp_daily_expences");
+		//gr.addQuery("sys_id",m);
+	//gr.addQuery("table_name",current.table_name);
+	//gr.addQuery("sys_id",current.table_sys_id);
+//	gr.get("m");
+	gr.query();
+	var k = gr.getRowCount();
+// 	if(gr.next()){
+// 			gr.is_file_attached = true;
+// 			gr.update();
+// 	}
+	while(gr.next()){
 		
-		}
-		else{
-			current.is_file_attached = true;
-			
-	
-		}
+		dateArray.push(gr.getValue('sys_id'));
 		
 	}
+		gs.info(dateArray);
+
+		
+	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -58,17 +60,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f0f850b3dba553008252f6dfbf96197b</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Ask Attachement</sys_name>
+        <sys_mod_count>117</sys_mod_count>
+        <sys_name>Ask attachement</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
         <sys_policy/>
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
         <sys_update_name>sys_script_f0f850b3dba553008252f6dfbf96197b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-05-21 07:26:59</sys_updated_on>
+        <sys_updated_on>2018-05-30 10:04:00</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>after</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=f0f850b3dba553008252f6dfbf96197b"/>
 </record_update>

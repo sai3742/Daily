@@ -6,8 +6,8 @@
         <action_delete>true</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
-        <active>true</active>
+        <action_update>false</action_update>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -55,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2f80ed3bdb2953008252f6dfbf961900</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Child Record Not insert or deleted</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
@@ -63,7 +63,7 @@
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
         <sys_update_name>sys_script_2f80ed3bdb2953008252f6dfbf961900</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-26 10:46:19</sys_updated_on>
+        <sys_updated_on>2018-05-22 09:45:57</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

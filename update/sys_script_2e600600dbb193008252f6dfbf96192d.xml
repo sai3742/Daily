@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -49,7 +49,7 @@ var tot = parseFloat(current.getValue('total_amount'));
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2e600600dbb193008252f6dfbf96192d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>onchange Advance Amount</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
@@ -57,7 +57,7 @@ var tot = parseFloat(current.getValue('total_amount'));
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
         <sys_update_name>sys_script_2e600600dbb193008252f6dfbf96192d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-26 07:51:17</sys_updated_on>
+        <sys_updated_on>2018-05-26 18:19:10</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

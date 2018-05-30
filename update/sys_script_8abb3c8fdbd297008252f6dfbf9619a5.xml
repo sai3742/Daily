@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -19,7 +19,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Avoid Duplicate Records with monthly</name>
+        <name>Ask attacah</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,69 +31,46 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-	var dateArray =[];
-	
-	var gd = new GlideDateTime("2018-01-22 08:00:00"); 
-	var time= gd.getDate();
-	//gs.addErrorMessage(gd.getDate());
-	var grAst = new GlideRecord('x_172325_daily_exp_daily_expences');
-	   grAst.addQuery('name', current.name);
-	//   grAst.addEncodedQuery("state!=1");
-	   grAst.query();
-	gs.addErrorMessage(grAst.getRowCount());
-	
-	while(grAst.next()){
-		gs.addErrorMessage(grAst.monthly_number);
-		var grAst1 = new GlideRecord('x_172325_daily_exp_monthly_expences');
-		//grAst1.addQuery('month', current.month);
-	//	grAst1.addQuery('sys_id',grAst.monthly_number);
-		//	grAst1.addQuery('state','=',1);
-		grAst1.addEncodedQuery("state!=1");
-		grAst1.query();
-		//gs.addInfoMessage(grAst1.getRowCount());
+	var h = parseFloat(current.amount);
+	//gs.addInfoMessage(h);
+	var c = current.is_file_attached;
+	//gs.addInfoMessage(c);
+	if(h>50 && c==false){
+	var gr = new GlideRecord("sys_attachment");
+	gr.addQuery("table_name",current.getTableName());
+	gr.addQuery("table_sys_id",current.sys_id);
+	gr.query();
+	var k = gr.getRowCount();
+	if(!gr.next()){
+		//gs.addErrorMessage("hiii");
+		current.is_file_attached = false;
+		current.setAbortAction(true);
 		
-		while(grAst1.next()){
-	//gs.addInfoMessage(grAst1.year);
-			dateArray = [grAst.date];
-	gs.info(dateArray);
-	var min = dateArray[0];
-	var max = dateArray[0];
-	for (var i = 0; i < dateArray.length; i++) {
-	if (dateArray[i] < min) {
-		min = dateArray[i];
 	}
-	else if(dateArray[i] > max) {
-		max = dateArray[i];
+	else{
+		//gs.addInfoMessage("hiii");
+		current.is_file_attached = true;
 	}
-}
-gs.info(min);
-gs.info(max);
-		}
+	}
 	
-		
-		
-	}	
-	
-	 
-
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-05-21 10:43:57</sys_created_on>
+        <sys_created_on>2018-05-30 06:56:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>9be99784dbd213008252f6dfbf9619f3</sys_id>
-        <sys_mod_count>88</sys_mod_count>
-        <sys_name>Avoid Duplicate Records with monthly</sys_name>
+        <sys_id>8abb3c8fdbd297008252f6dfbf9619a5</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>Ask attacah</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
         <sys_policy/>
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
-        <sys_update_name>sys_script_9be99784dbd213008252f6dfbf9619f3</sys_update_name>
+        <sys_update_name>sys_script_8abb3c8fdbd297008252f6dfbf9619a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-05-21 17:12:13</sys_updated_on>
+        <sys_updated_on>2018-05-30 10:04:15</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=9be99784dbd213008252f6dfbf9619f3"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=8abb3c8fdbd297008252f6dfbf9619a5"/>
 </record_update>

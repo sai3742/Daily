@@ -18,17 +18,23 @@
         <script><![CDATA[(function runAction(/*GlideRecord*/ current, /*GlideRecord*/ event, /*EmailWrapper*/ email, /*ScopedEmailLogger*/ logger, /*EmailClassifier*/ classifier) {
 	var number = email.body.number;
 	var status = email.body.status;
-	gs.info("saiiiiiiii"+number);
+	var comments = email.body.comments;
+	//gs.info("saiiiiiiii"+number);
+	//gs.info("comments"+comments);
 	var sysid ='';
 	var state ='';
 	var gr = new GlideRecord('x_172325_daily_exp_monthly_expences');
-	gr.get(number);
+	gr.addQuery('number',number);
 	gr.query();
+	//gs.info("saiiiii"+gr.getRowCount());
 	if(gr.next()){
-	gr.u_comments = email.body_text;
-	sysid = gr.sys_id;
+	gr.u_comments = comments;
+	
+	gr.state = "5";
 	gr.update();
+		sysid = gr.sys_id;
 	}
+	//gs.info("sysidddddddd"+sysid);
 	// Implement email action here
 	var sa = new GlideRecord('sysapproval_approver');
 	sa.addQuery('document_id',sysid);
@@ -36,7 +42,7 @@
 	sa.next();
 	sa.state = status;
 	sa.document_id.state = status;
-	gs.info("saiiiiii"+sa.document_id.state);
+	//gs.info("saiiiiii"+sa.document_id.state);
 	sa.update();	
 		
 	
@@ -49,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7a791704db7593008252f6dfbf961980</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>Manager Approval of daily wages</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expences" source="x_172325_daily_exp">ff880b1bdba913008252f6dfbf96190c</sys_package>
@@ -57,7 +63,7 @@
         <sys_scope display_value="Daily Expences">ff880b1bdba913008252f6dfbf96190c</sys_scope>
         <sys_update_name>sysevent_in_email_action_7a791704db7593008252f6dfbf961980</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-27 05:11:58</sys_updated_on>
+        <sys_updated_on>2018-05-30 10:28:52</sys_updated_on>
         <table>x_172325_daily_exp_monthly_expences</table>
         <template/>
         <type>reply</type>
