@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element label="Daily Expences" max_length="40" name="x_172325_daily_exp_daily_expences" type="collection">
+    <element label="Daily Expenses" max_length="40" name="x_172325_daily_exp_daily_expences" type="collection">
         <element label="Amount" max_length="20" name="amount" type="currency"/>
         <element attributes="edge_encryption_enabled=true" label="Comments" max_length="300" name="comments" type="string"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
-        <element choice="1" label="Expences Type" mandatory="true" max_length="40" name="expences_type" type="choice">
+        <element choice="1" label="Expenses Type" mandatory="true" max_length="40" name="expences_type" type="choice">
             <choice>
                 <element label="Bus Fare" sequence="0" value="1"/>
                 <element label="Auto Fare" sequence="1" value="2"/>
@@ -20,15 +20,15 @@
                 <element label="Other  Expences" sequence="11" value="12"/>
             </choice>
         </element>
-        <element label="From Location" max_length="32" name="from_location" reference="cmn_location" type="reference"/>
+        <element label="From Location" max_length="32" name="from_location" type="string"/>
         <element label="Is File Attached" max_length="40" name="is_file_attached" read_only="true" type="boolean"/>
         <element default="javascript:parent.month.getDisplayValue()" label="Month" max_length="40" name="month" read_only="true" type="string"/>
         <element label="Monthly Number" max_length="32" name="monthly_number" read_only="true" reference="x_172325_daily_exp_monthly_expences" type="reference"/>
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Name" max_length="32" name="name" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="Project Name" max_length="50" name="project_name" type="string"/>
+        <element label="Project Name" max_length="50" name="project_name" reference="x_172325_daily_exp_project" type="reference"/>
         <element label="Number of Persons" max_length="40" name="string" type="string"/>
-        <element label="To Location" max_length="32" name="to_location" reference="cmn_location" type="reference"/>
+        <element label="To Location" max_length="32" name="to_location" type="string"/>
         <element default="javascript:parent.year.getDisplayValue()" label="Year" max_length="40" name="year" read_only="true" type="string"/>
         <index name="index">
             <element name="to_location"/>

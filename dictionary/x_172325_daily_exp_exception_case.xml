@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Exception case" max_length="40" name="x_172325_daily_exp_exception_case" type="collection">
+        <element label="End Date" mandatory="true" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Month" max_length="32" name="month" reference="x_172325_daily_exp_month" type="reference"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Name" max_length="32" name="name" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Start Date" mandatory="true" max_length="40" name="start_date" type="glide_date"/>
+        <element choice="3" default="1" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element label="Draft" sequence="0" value="1"/>
+                <element label="Requested" sequence="1" value="2"/>
+                <element label="Approved" sequence="2" value="3"/>
+                <element label="Rejected" sequence="3" value="4"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="month"/>
+        </index>
+        <index name="index2">
+            <element name="name"/>
+        </index>
+    </element>
+</database>

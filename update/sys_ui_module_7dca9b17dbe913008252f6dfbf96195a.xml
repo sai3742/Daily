@@ -2,7 +2,7 @@
 <record_update sys_domain="global" table="sys_ui_module">
     <sys_ui_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="Daily Expences">c098c35bdba913008252f6dfbf961923</application>
+        <application display_value="Daily Expenses">c098c35bdba913008252f6dfbf961923</application>
         <filter/>
         <name>Years</name>
         <order/>

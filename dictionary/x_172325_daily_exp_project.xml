@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Project" max_length="40" name="x_172325_daily_exp_project" type="collection">
+        <element label="Location" max_length="32" name="location" type="string"/>
+        <element display="true" label="Project" max_length="40" name="project" type="string"/>
+        <element label="Users" max_length="4000" name="users" reference="sys_user" type="glide_list"/>
+        <index name="index">
+            <element name="location"/>
+        </index>
+    </element>
+</database>
